@@ -66,4 +66,5 @@ class PlayerManager {
         }
         this.players.splice(index, 1);
         return true;
+    }
 }
