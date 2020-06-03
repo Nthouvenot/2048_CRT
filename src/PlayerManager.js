@@ -17,6 +17,7 @@ class PlayerManager {
             return false;
         }
         this.players.push(_player);
+        return _player;
     }
 
     /**
@@ -35,6 +36,11 @@ class PlayerManager {
         return Object.assign(playerReader);
     }
 
+    /**
+     * Modifie les informations d'un joueur
+     * @param {Player} _player
+     * @returns {Player}
+     */
     update(_player) {
         if (!(_player instanceof 'Player')) {
             return undefined;
@@ -42,7 +48,7 @@ class PlayerManager {
         if (!this.delete(_player.username)) {
             return undefined;
         }
-        this.create(_player);
+        return this.create(_player);
     }
 
     /**
