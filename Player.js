@@ -12,6 +12,7 @@ class Player {
     #lastLogged;
     #isLogged;
 
+    
     constructor(_username, _password, _email, _totalGames, _totalScore, _dateCreation, _lastLogged, _isLogged) {
         this.setUsername(_username);
         this.setPassword(_password);
