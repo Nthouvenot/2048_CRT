@@ -13,14 +13,14 @@ class Player {
     #isLogged;
 
     constructor(_username, _password, _email, _totalGames, _totalScore, _dateCreation, _lastLogged, _isLogged) {
-        this.setUsername();
-        this.setPassword();
-        this.setEmail();
-        this.setTotalGames();
-        this.setTotalScore();
-        this.setDateCreation();
-        this.setLastLogged();
-        this.setIsLogged();
+        this.setUsername(_username);
+        this.setPassword(_password);
+        this.setEmail(_email);
+        this.setTotalGames(_totalGames);
+        this.setTotalScore(_totalScore);
+        this.setDateCreation(_dateCreation);
+        this.setLastLogged(_lastLogged);
+        this.setIsLogged(_isLogged);
     }
 
 
