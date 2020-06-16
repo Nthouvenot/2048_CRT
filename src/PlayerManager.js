@@ -3,8 +3,10 @@ const player = require('./Player.js')
 
 class PlayerManager {
 
+    #player;
+
     constructor() {
-        this.players = [];
+        this.#players = [];
     }
 
     /**
@@ -16,8 +18,9 @@ class PlayerManager {
         if (!(_player instanceof Player)) {
             return false;
         }
-        this.players.push(_player);
-        return _player;
+        let player = Object.assign(new Player(), _player)
+        this.#players.push(player);
+        return Object.assign(new Player(), player);
     }
 
     /**
@@ -29,11 +32,11 @@ class PlayerManager {
         if (!(typeof _username == 'string')) {
             return undefined;
         }
-        let playerReader = this.players.find(player => player.username == _username);
+        let playerReader = this.#players.find(player => player.getUsername() == _username);
         if (playerReader != undefined) {
             return undefined;
         }
-        return Object.assign(playerReader);
+        return Object.assign(new Player(), playerReader);
     }
 
     /**
@@ -45,7 +48,7 @@ class PlayerManager {
         if (!(_player instanceof 'Player')) {
             return undefined;
         }
-        if (!this.delete(_player.username)) {
+        if (!this.delete(_player.getUsername())) {
             return undefined;
         }
         return this.create(_player);
@@ -60,11 +63,11 @@ class PlayerManager {
         if (!(typeof _username == 'string')) {
             return false;
         }
-        let index = this.players.indexOf('username', _username);
+        let index = this.#players.indexOf('username', _username);
         if (index == undefined) {
             return false;
         }
-        this.players.splice(index, 1);
+        this.#players.splice(index, 1);
         return true;
     }
 }
