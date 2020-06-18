@@ -34,7 +34,7 @@ class Player {
 
     setUsername(_username) {
         _username = _username || "anonyme";
-        let patt = /[^a-z]{4}/;
+        let patt = /^[a-zA-Z]{4,10}/;
         if (typeof (_username) === 'string' && patt.test(_username))
             this.#username = _username;
     }
