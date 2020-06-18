@@ -35,7 +35,7 @@ class Player {
     setUsername(_username) {
         _username = _username || "anonyme";
         let patt = /[^a-z]{4}/;
-        if (typeof (_username) === string && patt.test(_username))
+        if (typeof (_username) === 'string' && patt.test(_username))
             this.#username = _username;
     }
 
@@ -47,7 +47,7 @@ class Player {
 
     setPassword(_password) {
         let patt = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/; // MIDLLPASS = ^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})
-        if (typeof (_password) === string && patt.test(_password))
+        if (typeof (_password) === 'string' && patt.test(_password))
             this.#password = _password;
     }
 
@@ -60,7 +60,7 @@ class Player {
     setEmail(_email) {
         _email = _email || undefined;
         let patt = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
-        if (typeof (_email) === string && patt.test(_email))
+        if (typeof (_email) === 'string' && patt.test(_email))
             this.#email = _email;
     }
 
