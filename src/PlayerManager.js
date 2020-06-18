@@ -3,7 +3,7 @@
  * Gestion d'une collection de joueurs
  */
 
-const player = require('./Player.js')
+const Player = require('./Player.js')
 
 
 class PlayerManager {
@@ -38,7 +38,7 @@ class PlayerManager {
             return undefined;
         }
         let playerReader = this.#players.find(player => player.getUsername() == _username);
-        if (playerReader != undefined) {
+        if (playerReader == undefined) {
             return undefined;
         }
         return Object.assign(new Player(), playerReader);
@@ -50,7 +50,7 @@ class PlayerManager {
      * @returns {Player}
      */
     update(_player) {
-        if (!(_player instanceof 'Player')) {
+        if (!(_player instanceof Player)) {
             return undefined;
         }
         //Si le donnees ne sont pas valide on ne peu pas updater
