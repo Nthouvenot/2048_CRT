@@ -49,7 +49,7 @@ class PlayerManager {
             return undefined;
         }
         //Si le donnees ne sont pas valide on ne peu pas updater
-        let regex1 = /[^a-z]{4}/;
+        let regex1 = /^[a-zA-Z]{4,10}/;
         let regex2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
         let regex3 = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
         if (!regex1.test(_player.getUsername()) && !regex2.test(_player.getPassword()) && !regex3.test(_player.getEmail())) { 
