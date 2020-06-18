@@ -46,7 +46,7 @@ class Player {
 
 
     setPassword(_password) {
-        let patt = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/; // MIDLLPASS = ^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})
+        let patt = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
         if (typeof (_password) === 'string' && patt.test(_password))
             this.#password = _password;
     }
