@@ -23,7 +23,7 @@ class PlayerManager {
         if (!(_player instanceof Player)) {
             return false;
         }
-        let player = Object.assign(new Player(), _player)
+        let player = Object.assign(new Player(), _player);
         this.#players.push(player);
         return Object.assign(new Player(), player);
     }
@@ -37,7 +37,13 @@ class PlayerManager {
         if (!(typeof _username == 'string')) {
             return undefined;
         }
-        let playerReader = this.#players.find(player => player.getUsername() == _username);
+    /*let playerReader = this.#players.find(player => player.getUsername() == _username);*/
+        let playerReader = undefined;
+        for (let i = 0; i < this.#players; i++) {
+            if (this.#players[i].getUsername() == _username) {
+                playerReader = this.#players[i];
+            }
+        }
         if (playerReader == undefined) {
             return undefined;
         }
